@@ -2,7 +2,8 @@
 
 $config = include 'config.php';
 $salt = $config['security']['ip_hash_salt'];
-$user_ip = hash('sha256', $_SERVER['REMOTE_ADDR'] . $salt);
+$user_real_ip = getUserIP();
+$user_ip = hash('sha256', $user_real_ip . $salt);
 $now = time();
 $limit_seconds = 60;
 
@@ -18,6 +19,23 @@ if ($lastSubmission) {
     if (($now - $lastTime) < $limit_seconds) {
         // Слишком часто, отправляем ошибку
         $isOftenSend = true;
+    }
+}
+
+function getUserIP()
+{
+    if (!empty($_SERVER['HTTP_CF_CONNECTING_IP'])) {
+        // Cloudflare
+        return $_SERVER['HTTP_CF_CONNECTING_IP'];
+    } elseif (!empty($_SERVER['HTTP_X_FORWARDED_FOR'])) {
+        // Прокси/балансировщики, берём первый IP
+        return explode(',', $_SERVER['HTTP_X_FORWARDED_FOR'])[0];
+    } elseif (!empty($_SERVER['HTTP_X_REAL_IP'])) {
+        // Nginx reverse proxy
+        return $_SERVER['HTTP_X_REAL_IP'];
+    } else {
+        // По умолчанию
+        return $_SERVER['REMOTE_ADDR'];
     }
 }
 
