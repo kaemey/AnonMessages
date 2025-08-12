@@ -44,23 +44,23 @@ config.php # Конфигурация проекта
    ```bash
    git clone https://github.com/username/repo-name.git
    cd repo-name
-
+    ```
 2. **Настроить конфигурацию в config.php**
-```php
-return [
-    'admin' => [
-        'login' => 'admin',
-        'password' => 'secret'
-    ],
-    'security' => [
-        'ip_hash_salt' => 'уникальная_строка'
-    ]
-];
-```
+    ```php
+    return [
+        'admin' => [
+            'login' => 'admin',
+            'password' => 'secret'
+        ],
+        'security' => [
+            'ip_hash_salt' => 'уникальная_строка'
+        ]
+    ];
+    ```
 3. **Дать права на запись базе SQLite**
-
-chmod 777 database.sqlite
-
+    ```
+    chmod 777 database.sqlite
+    ```
 🔒 Защита от спама
 ⏳ Ограничение отправки — 1 сообщение в 60 секунд.
 🕵 Honeypot-поле (phone_number) для отсева ботов.
