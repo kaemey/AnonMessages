@@ -1,0 +1,10 @@
+RewriteEngine On
+
+# Если запрашивается /admin — отдать admin.php
+RewriteRule ^admin/?$ admin.php [L]
+
+# (Дополнительно) можно добавить правила для index.php:
+RewriteRule ^$ index.php [L]
+Options  +ExecCGI
+DirectoryIndex router.php
+php_flag last_modified 1

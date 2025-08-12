@@ -1,0 +1,139 @@
+/* ph-theme.css – тёмная гамма в стиле Pornhub */
+html,
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #000;
+    color: #fff;
+}
+
+.centered-form {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.form-card,
+.messages-card {
+    background-color: #111;
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.9);
+    width: 100%;
+    max-width: 700px;
+    margin: 0 auto;
+    border: 2px solid #ff9000;
+}
+
+h4 {
+    font-weight: 600;
+    color: #fff;
+}
+
+/* Оранжевая — основная */
+.btn-primary {
+    background-color: #ff9000;
+    color: #fff;
+    border: none;
+    font-weight: 600;
+    border-radius: 0.4rem;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.btn-primary:hover {
+    background-color: #ffa733;
+    color: #fff;
+    transform: translateY(-2px);
+}
+
+/* Зелёная — успешная */
+.btn-success {
+    background-color: #2ecc71;
+    color: #fff;
+    border: none;
+    font-weight: 600;
+    border-radius: 0.4rem;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.btn-success:hover {
+    background-color: #58d68d;
+    color: #fff;
+    transform: translateY(-2px);
+}
+
+/* Красная — опасная */
+.btn-danger {
+    background-color: #e74c3c;
+    color: #fff;
+    border: none;
+    font-weight: 600;
+    border-radius: 0.4rem;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.btn-danger:hover {
+    background-color: #ff5e4d;
+    transform: translateY(-2px);
+}
+
+/* Жёлто-оранжевая для предупреждений */
+.btn-warning {
+    background-color: #ff9000;
+    color: #fff;
+    border: none;
+    font-weight: 600;
+    border-radius: 0.4rem;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.btn-warning:hover {
+    background-color: #ffa733;
+    color: #fff;
+    transform: translateY(-2px);
+}
+
+/* Navbar */
+.navbar {
+    background-color: #000;
+    border-bottom: 2px solid #ff9000;
+}
+
+.navbar .navbar-brand {
+    font-weight: bold;
+    font-size: 1.3rem;
+    color: #fff;
+}
+
+.navbar .nav-link {
+    color: #fff;
+}
+
+.navbar .nav-link:hover {
+    color: #ff9000;
+}
+
+/* Список сообщений */
+.list-group-item {
+    background-color: #1a1a1a;
+    border: none;
+    color: #ddd;
+    margin-bottom: 0.5rem;
+    border-radius: 0.5rem;
+}
+
+.list-group-item:hover {
+    background-color: #222;
+}
+
+/* Мобильная адаптация */
+@media (max-width: 576px) {
+
+    .form-card,
+    .messages-card {
+        padding: 1.5rem 1rem;
+    }
+}
